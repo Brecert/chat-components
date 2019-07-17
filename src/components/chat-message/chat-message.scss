@@ -1,0 +1,11 @@
+.chat-message {
+  padding: 10px;
+
+  .message-info {
+    display: flex;
+
+    .timestamp {
+      margin-left: auto;
+    }
+  }
+}
