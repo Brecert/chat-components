@@ -25,7 +25,8 @@ describe('chat-message', () => {
     expect(timestamp.textContent).toEqual(``);
     component.setProperty('datetime', '2014-04-01T16:30:00-08:00');
     await page.waitForChanges();
-    expect(timestamp.textContent).toEqual(`1396398600000`);
+    // todo: make this test time agnostic
+    expect(timestamp.textContent.startsWith('5 years ago')).toBeTruthy;
 
     const message = await page.find('chat-message .message');
     expect(message.textContent).toEqual(``);

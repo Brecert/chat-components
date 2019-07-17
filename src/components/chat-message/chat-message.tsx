@@ -1,4 +1,5 @@
 import { Component, Prop, h } from '@stencil/core';
+import 'time-elements'
 
 @Component({
   tag: 'chat-message',
@@ -36,7 +37,7 @@ export class MyComponent {
         }
         <div class="message-info">
           <div class="username">{this.username}</div>
-          <div class="timestamp">{Date.parse(this.datetime) || ''}</div>
+          <time-ago class="timestamp" datetime={this.datetime || ''}>{this.datetime}</time-ago>
         </div>
         <div class="message">{this.message}<slot /></div>
       </div>

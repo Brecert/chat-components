@@ -29,5 +29,8 @@
     "jest-cli": "24.8.0",
     "puppeteer": "1.17.0"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "time-elements": "^3.0.0"
+  }
 }
