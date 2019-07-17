@@ -1,6 +1,6 @@
 {
   "name": "chat-components",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "description": "components for quickly creating a chat-like website",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
