@@ -16,6 +16,10 @@
     }
   }
 
+  .message {
+    overflow: hidden;
+  }
+
   // needed to align everything correctly
   & > div {
     padding: 1px;
