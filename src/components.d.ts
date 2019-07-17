@@ -9,19 +9,25 @@ import { HTMLStencilElement, JSXBase } from '@stencil/core/internal';
 
 
 export namespace Components {
+  interface ChatAvatar {
+    /**
+    * The path to the avatar image
+    */
+    'src': string;
+  }
   interface ChatMessage {
     /**
     * The avatar url of the user who created the message
     */
     'avatar'?: string;
     /**
+    * The timestamp of when the message was created
+    */
+    'datetime': string;
+    /**
     * The sent message
     */
     'message': string;
-    /**
-    * The timestamp of when the message was created
-    */
-    'timestamp': Date;
     /**
     * The username of the user who created message
     */
@@ -32,30 +38,43 @@ export namespace Components {
 declare global {
 
 
+  interface HTMLChatAvatarElement extends Components.ChatAvatar, HTMLStencilElement {}
+  var HTMLChatAvatarElement: {
+    prototype: HTMLChatAvatarElement;
+    new (): HTMLChatAvatarElement;
+  };
+
   interface HTMLChatMessageElement extends Components.ChatMessage, HTMLStencilElement {}
   var HTMLChatMessageElement: {
     prototype: HTMLChatMessageElement;
     new (): HTMLChatMessageElement;
   };
   interface HTMLElementTagNameMap {
+    'chat-avatar': HTMLChatAvatarElement;
     'chat-message': HTMLChatMessageElement;
   }
 }
 
 declare namespace LocalJSX {
+  interface ChatAvatar extends JSXBase.HTMLAttributes<HTMLChatAvatarElement> {
+    /**
+    * The path to the avatar image
+    */
+    'src'?: string;
+  }
   interface ChatMessage extends JSXBase.HTMLAttributes<HTMLChatMessageElement> {
     /**
     * The avatar url of the user who created the message
     */
     'avatar'?: string;
     /**
+    * The timestamp of when the message was created
+    */
+    'datetime'?: string;
+    /**
     * The sent message
     */
     'message'?: string;
-    /**
-    * The timestamp of when the message was created
-    */
-    'timestamp'?: Date;
     /**
     * The username of the user who created message
     */
@@ -63,6 +82,7 @@ declare namespace LocalJSX {
   }
 
   interface IntrinsicElements {
+    'chat-avatar': ChatAvatar;
     'chat-message': ChatMessage;
   }
 }

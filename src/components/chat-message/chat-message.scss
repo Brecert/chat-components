@@ -1,5 +1,12 @@
 .chat-message {
-  padding: 10px;
+  .avatar {
+    float: left;
+
+    height: 40px;
+    width: 40px;
+
+    margin-right: 10px;
+  }
 
   .message-info {
     display: flex;
@@ -7,5 +14,10 @@
     .timestamp {
       margin-left: auto;
     }
+  }
+
+  // needed to align everything correctly
+  & > div {
+    padding: 1px;
   }
 }
