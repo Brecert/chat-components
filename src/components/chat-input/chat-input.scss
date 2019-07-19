@@ -1,0 +1,90 @@
+// todo(@bree): css variables;
+
+// :host doesn't work;
+chat-input {
+  --color: #555;
+  --height: 24px;
+  --caret-color: #000;
+  --background-color: transparent;
+  --selection-background-color: #6664;
+  --placeholder-color: #333;
+  --padding: 2px;
+}
+
+.chat-input-container {
+  appearance: textarea;
+}
+
+// if on a webkit based browser then apply the chrome style
+@supports not (-moz-appearance:textarea) {
+
+  @supports not (-ms-ime-align: auto) {
+    .chat-textarea,
+    .chat-input-overlay {
+      // chrome adds 2px of unwanted height, this removes that
+      // but first we must first factor in the padding
+      margin-bottom: calc(((var(--padding) * 2) + 2px) * -1 ) !important;
+    }
+  }
+
+  .chat-input-container {
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgb(169, 169, 169);
+    border-image: initial;
+
+    :focus-within {
+      outline: -webkit-focus-ring-color auto 1px;
+    }
+  }
+
+  .chat-textarea:focus {
+    outline: none;
+  }
+}
+
+.chat-input {
+  position: relative;
+}
+
+.chat-textarea,
+.chat-input-overlay {
+  height: var(--height);
+  min-height: var(--height);
+  width: calc(100% - var(--padding) * 2);
+  line-height: var(--height);
+  background: var(--background-color);
+
+  font-family: inherit;
+  font-size: inherit;
+
+  border: none;
+
+  padding: var(--padding);
+  margin: 0;
+}
+
+.chat-textarea {
+  color: transparent;
+  resize: none;
+  caret-color: var(--caret-color);
+
+  &::selection {
+    color: transparent;
+    background-color: var(--selection-background-color);
+  }
+}
+
+.chat-input-overlay {
+  position: absolute;
+
+  top: 0;
+  left: 0;
+  right: 0;
+
+  word-break:break-all;
+  overflow-wrap: break-word;
+  white-space: pre-wrap;
+
+  pointer-events: none;
+}
