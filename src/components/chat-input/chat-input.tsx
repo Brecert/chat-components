@@ -43,19 +43,17 @@ export class MyComponent {
 
   render() {
     return(
-      <div class="chat-input-container">
-        <div class="chat-input">
-          <textarea
-            class="chat-textarea"
-            ref={(el) => this.textArea = el as HTMLTextAreaElement}
-            onInput={(event: UIEvent) => this.inputChanged(event)}
-            onScroll={(event: Event) => this.scrollChanged(event)}
-            onKeyDown={(event: KeyboardEvent) => this.handleKeydown(event)}
-            >
-          </textarea>
-          <div class="chat-input-overlay">
-            <span ref={(el) => this.inputOverlay = el as HTMLSpanElement}>{this.value}</span>
-          </div>
+      <div class="chat-input">
+        <textarea
+          class="chat-textarea"
+          ref={(el) => this.textArea = el as HTMLTextAreaElement}
+          onInput={(event: UIEvent) => this.inputChanged(event)}
+          onScroll={(event: Event) => this.scrollChanged(event)}
+          onKeyDown={(event: KeyboardEvent) => this.handleKeydown(event)}
+          >
+        </textarea>
+        <div class="chat-input-overlay">
+          <span ref={(el) => this.inputOverlay = el as HTMLSpanElement}>{this.value}</span>
         </div>
       </div>
     )

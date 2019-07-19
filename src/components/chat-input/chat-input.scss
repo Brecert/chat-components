@@ -12,7 +12,8 @@ chat-input {
 }
 
 .chat-input-container {
-  appearance: textarea;
+  // appearance: textarea;
+  background-color: var(--background-color)
 }
 
 // if on a webkit based browser then apply the chrome style
@@ -45,6 +46,7 @@ chat-input {
 
 .chat-input {
   position: relative;
+  background-color: var(--background-color)
 }
 
 .chat-textarea,

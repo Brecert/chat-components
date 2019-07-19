@@ -5,29 +5,113 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0">
   <title>Chat Components</title>
 
-  <!-- <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.1/build/base-min.css"> -->
+  <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.1/build/base-min.css">
   <script type="module" src="/build/chat-components.esm.js"></script>
   <script nomodule src="/build/chat-components.js"></script>
 
+  <style type="text/css">
+    body {
+      height: 100%;
+    }
+
+    .chat-area {
+      position: absolute;
+      /* left: 25%; */
+
+      display: flex;
+      flex-direction: column;
+      /* max-width: 512px !important; */
+      margin: auto;
+      height: 100%;
+      /* top: 2.5%; */
+      box-shadow: 0 4px 14px rgba(0, 0, 0, .12);
+      border-radius: 10px;
+      /* padding: 10px; */
+      overflow: hidden;
+    }
+
+    .message-list {
+      flex: 1;
+      overflow: auto;
+      scrollbar-width: thin;
+      scrollbar-color: #ccc transparent;
+    }
+
+    .message-list > .message {
+      padding: 10px;
+      margin: 24px;
+      border-radius: 10px;
+    }
+
+    .message-list > .message:nth-child(odd) {
+      background-color: #efefef;
+    }
+
+    .chat-input {
+      display: flex;
+      justify-content: center;
+      align-content: center;
+      /* margin: 20px; */
+    }
+
+    chat-input {
+      height: 28px;
+      max-height: 400px;
+      border-radius: 24px;
+      overflow: hidden;
+      padding: 5px 10px;
+      border: 1px solid rgba(50, 50, 50, .12);
+
+      margin: 12px;
+    }
+
+    chat-input:active, chat-input:hover, chat-input:focus-within {
+      box-shadow: 0 0px 3px rgba(0, 0, 0, 0.12);
+    }
+  </style>
+
 </head>
 <body>
-
-  <div style="width: 500px !important;">
-    <chat-message username="brecert" datetime="2014-04-01T16:30:00-08:00" avatar="https://avatars1.githubusercontent.com/u/11599528?s=40&v=4">
-      <hr>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-    </chat-message>
-    <br>
-    <chat-message username="brecert" datetime="2014-04-01T16:30:00-08:00" avatar="https://avatars1.githubusercontent.com/u/11599528?s=40&v=4">
-      <hr>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-    </chat-message>
-
-    <hr>
-
+  <div class="chat-area">
+    <div class="message-list">
+      <div class="message">
+        <chat-message username="brecert" datetime="2014-04-01T16:30:00-08:00" avatar="https://avatars1.githubusercontent.com/u/11599528?s=40&v=4">
+          <hr>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        </chat-message>
+        <br>
+      </div>
+      <div class="message">
+        <chat-message username="brecert" datetime="2014-04-01T16:30:00-08:00" avatar="https://avatars1.githubusercontent.com/u/11599528?s=40&v=4">
+          <hr>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        </chat-message>
+        <br>
+      </div>
+      <div class="message">
+        <chat-message username="brecert" datetime="2014-04-01T16:30:00-08:00" avatar="https://avatars1.githubusercontent.com/u/11599528?s=40&v=4">
+          <hr>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        </chat-message>
+        <br>
+      </div>
+      <div class="message">
+        <chat-message username="brecert" datetime="2014-04-01T16:30:00-08:00" avatar="https://avatars1.githubusercontent.com/u/11599528?s=40&v=4">
+          <hr>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        </chat-message>
+        <br>
+      </div>
+      <div class="message">
+        <chat-message username="brecert" datetime="2014-04-01T16:30:00-08:00" avatar="https://avatars1.githubusercontent.com/u/11599528?s=40&v=4">
+          <hr>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        </chat-message>
+        <br>
+      </div>
+    </div>
+    <hr width="100%">
     <chat-input></chat-input>
-
-    <!-- <textarea></textarea> -->
   </div>
 
 </body>
