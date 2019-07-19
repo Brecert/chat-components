@@ -6,7 +6,7 @@ import 'time-elements'
   styleUrl: 'chat-message.scss',
   shadow: false
 })
-export class MyComponent {
+export class ChatMessage {
   /**
    * The username of the user who created message
    */

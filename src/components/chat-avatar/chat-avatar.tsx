@@ -5,7 +5,7 @@ import { Component, Prop, h } from '@stencil/core';
   styleUrl: 'chat-avatar.scss',
   shadow: true
 })
-export class MyComponent {
+export class ChatAvatar {
   /**
    * The path to the avatar image
    */

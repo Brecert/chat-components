@@ -5,7 +5,7 @@ import { Component, Prop, h, Event, EventEmitter } from '@stencil/core';
   styleUrl: 'chat-input.scss',
   shadow: false
 })
-export class MyComponent {
+export class ChatInput {
   textArea!: HTMLTextAreaElement
   inputOverlay!: HTMLSpanElement
 
