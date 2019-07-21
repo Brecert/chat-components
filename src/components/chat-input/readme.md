@@ -16,9 +16,9 @@
 
 ## Events
 
-| Event         | Description | Type               |
-| ------------- | ----------- | ------------------ |
-| `sendMessage` |             | `CustomEvent<any>` |
+| Event         | Description | Type                  |
+| ------------- | ----------- | --------------------- |
+| `sendMessage` |             | `CustomEvent<string>` |
 
 
 ----------------------------------------------

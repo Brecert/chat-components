@@ -76,7 +76,7 @@ declare namespace LocalJSX {
   }
   interface ChatInput extends JSXBase.HTMLAttributes<HTMLChatInputElement> {
     'newlineWhenShift'?: boolean;
-    'onSendMessage'?: (event: CustomEvent<any>) => void;
+    'onSendMessage'?: (event: CustomEvent<string>) => void;
     'sendKeys'?: string[];
     'value'?: string;
   }
