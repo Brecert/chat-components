@@ -13,7 +13,7 @@ export class ChatInput {
   @Prop() newlineWhenShift: boolean = true
   @Prop() sendKeys: string[] = ['Enter']
 
-  @Event() sendMessage: EventEmitter
+  @Event() sendMessage: EventEmitter<string>
 
   componentWillUpdate() {
     let textAreaStyle = getComputedStyle(this.textArea)
